@@ -24,7 +24,7 @@ public class HeapSort {
         }
     }
 
-    public void maxHeapify(int[] nums,int i,int heapSize) {
+    private void maxHeapify(int[] nums,int i,int heapSize) {
         int left=2*i;
         int right=2*i+1;
         int largest;
@@ -46,6 +46,32 @@ public class HeapSort {
             nums[i]=nums[largest];
             nums[largest]=temp;
             maxHeapify(nums,largest,heapSize);
+        }
+    }
+
+    private void maxHeapify2(int[] nums,int i,int heapSize) {
+        while(true) {
+            int left = 2 * i;
+            int right = 2 * i + 1;
+            int largest;
+            if (left < heapSize && nums[left] > nums[i]) {
+                largest = left;
+            } else {
+                largest = i;
+            }
+            if (right < heapSize && nums[right] > nums[largest]) {
+                largest = right;
+            }
+            if (largest != i) {
+                int temp = nums[i];
+                nums[i] = nums[largest];
+                nums[largest] = temp;
+                i=largest;
+            }
+            else
+            {
+                break;
+            }
         }
     }
 }

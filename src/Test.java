@@ -1,4 +1,8 @@
-import algorithms.MaxSubArray;
+import algorithms.HeapSort;
+import algorithms.QuickSort;
+import algorithms.Subsets;
+
+import java.util.List;
 
 /**
  * Created by wangjinzhao on 2017/3/16.
@@ -6,7 +10,7 @@ import algorithms.MaxSubArray;
 public class Test {
     public static void main(String... args)
     {
-        int res= new MaxSubArray().maxSubArray(new int[]{-2,-1});
-        System.out.println(res);
+        int[] a={5,2,7,98,2,2,89,1,20,56,3};
+        new HeapSort().heapSort(a);
     }
 }
