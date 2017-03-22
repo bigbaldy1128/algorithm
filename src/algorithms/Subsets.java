@@ -6,7 +6,7 @@ import java.util.*;
  * Created by wangjinzhao on 2017/3/21.
  */
 public class Subsets {
-    public List<List<Integer>> subsets(int[] nums) {
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> res=new ArrayList<>();
         backTracing(res,new ArrayList<>(),nums,0);
