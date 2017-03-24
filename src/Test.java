@@ -7,6 +7,6 @@ public class Test {
 
     public static void main(String... args)
     {
-        System.out.println(new FindAllAnagramsInAString().findAnagrams("ababd","abd"));
+        int index = Integer.valueOf("abcfe2");
     }
 }
