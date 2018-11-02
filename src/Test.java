@@ -1,4 +1,7 @@
-import algorithms.SelectKMinElement;
+import exercise.MyExercise;
+
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * Created by wangjinzhao on 2017/3/16.
@@ -6,7 +9,9 @@ import algorithms.SelectKMinElement;
 public class Test {
 
     public static void main(String... args) {
-        System.out.println(new SelectKMinElement().selectKMin(new int[]{5,7,8,0,1,4,2,6}, 0, 7, 4));
+        int[] a = {7, 3, 1, 2, 8, 10, 22};
+        new MyExercise().sort(a);
+        IntStream.of(a).forEach(System.out::println);
     }
 
 
