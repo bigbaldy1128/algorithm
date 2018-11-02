@@ -1,43 +1,35 @@
 package exercise;
 
+import algorithms.PathSum2;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+
 /**
  * Created by wangjinzhao on 2018/10/30
  */
 public class MyExercise {
-    public void sort(int[] nums) {
-        buildHeap(nums);
-        for (int i = nums.length - 1; i > 0; i--) {
-            swap(nums, 0, i);
-            adjustHeap(nums, 0, i);
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int x) {
+            val = x;
         }
     }
 
-    private void buildHeap(int[] nums) {
-        for (int i = nums.length / 2; i >= 0; i--) {
-            adjustHeap(nums, i, nums.length);
+    public String addStrings(String num1, String num2) {
+        StringBuilder res = new StringBuilder();
+        int carry = 0;
+        for (int i = num1.length() - 1, j = num2.length() - 1; i >= 0 || j >= 0 || carry == 1; i--, j--) {
+            int x = i < 0 ? 0 : num1.charAt(i) - '0';
+            int y = j < 0 ? 0 : num2.charAt(j) - '0';
+            res.append((x + y + carry) % 10);
+            carry = (x + y + carry) / 10;
         }
-    }
-
-    private void adjustHeap(int[] nums, int i, int heapSize) {
-        while (true) {
-            int left = i * 2 + 1;
-            int right = i * 2 + 2;
-            int top;
-            if (left < heapSize && nums[left] > nums[i]) {
-                top = left;
-            } else {
-                top = i;
-            }
-            if (right < heapSize && nums[right] > nums[top]) {
-                top = right;
-            }
-            if (top != i) {
-                swap(nums, top, i);
-                i = top;
-            } else {
-                break;
-            }
-        }
+        return res.reverse().toString();
     }
 
     private void swap(int[] nums, int a, int b) {
