@@ -1,5 +1,6 @@
 package algorithms;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,7 +17,7 @@ import java.util.Set;
  */
 public class IntersectionOfTwoArrays {
     public int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> set=new HashSet<>();
+        Set<Integer> set= new HashSet<>();
         Set<Integer> res=new HashSet<>();
         for(int num:nums1)
         {

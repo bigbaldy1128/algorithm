@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class PalindromeLinkedList {
     public boolean isPalindrome(ListNode head) {
-        if(head==null ||head.next==null)
+        if (head == null || head.next == null)
             return true;
         Stack<Integer> stack = new Stack<>();
         ListNode slow = head, fast = head;
@@ -17,15 +17,14 @@ public class PalindromeLinkedList {
             slow = slow.next;
             fast = fast.next.next;
         }
-        if(fast!=null)
-        {
-            slow=slow.next;
+        if (fast != null) {
+            slow = slow.next;
         }
         while (!stack.isEmpty()) {
             if (stack.pop() != slow.val) {
                 return false;
             }
-            slow=slow.next;
+            slow = slow.next;
         }
         return true;
     }
@@ -64,13 +63,12 @@ public class PalindromeLinkedList {
     }
 
     public ListNode reverse2(ListNode head) {
-        ListNode cur=head;
-        while(cur.next!=null)
-        {
-            ListNode next=cur.next;
-            cur.next=next.next;
-            next.next=head;
-            head=next;
+        ListNode cur = head;
+        while (cur.next != null) {
+            ListNode next = cur.next;
+            cur.next = next.next;
+            next.next = head;
+            head = next;
         }
         return head;
     }
