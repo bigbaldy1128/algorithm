@@ -16,20 +16,16 @@ public class MyExercise {
         }
     }
 
-    public int binarySearch(int[] nums, int target) {
-        int low = 0;
-        int high = nums.length - 1;
-        while (low <= high) {
-            int mid = (low + high) / 2;
-            if (nums[mid] == target) {
-                return mid;
-            } else if (nums[mid] > target) {
-                high = mid - 1;
-            } else {
-                low = mid + 1;
-            }
+    int pow(int a, int n) {
+        if (n == 0) return 1;
+        if (n == 1) return a;
+        if ((n & 1) == 1) {
+            int r = pow(a, (n - 1) / 2);
+            return r * r * a;
+        } else {
+            int r = pow(a, n / 2);
+            return r * r;
         }
-        return -1;
     }
 
     private void swap(int[] nums, int a, int b) {

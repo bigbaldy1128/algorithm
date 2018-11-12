@@ -1,13 +1,7 @@
-import algorithms.CoinChange;
-import algorithms.DifferentWaysToAddParentheses;
-import algorithms.LongestPalindromicSubstring;
-import algorithms.Subsets;
+import algorithms.*;
 import exercise.MyExercise;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -21,7 +15,7 @@ public class Test {
     public static void main(String... args) {
 //        int[] a = {7, 3, 1, 2, 8, 10, 22};
 //        Arrays.stream(a).forEach(System.out::println);
-        List<List<Integer>> res = new Subsets().subsetsWithDup(new int[]{1,1,3});
+        System.out.println(new RemoveKDigits().removeKdigits("10",1));
     }
 
 
